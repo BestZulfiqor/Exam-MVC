@@ -6,4 +6,5 @@ public class CreateOrderDto
 {
     public int CustomerId { get; set; }
     public DateTimeOffset OrderDate { get; set; }
+    public List<GetOrderItemDto> Items { get; set; }
 }

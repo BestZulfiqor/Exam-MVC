@@ -16,6 +16,18 @@
         <input type="datetime-local" asp-for="OrderDate" class="form-control">
         <span asp-validation-for="OrderDate" class="text-danger"></span>
     </div>
+
+    <h4>Order details</h4>
+    <div class="form-group">
+        <label asp-for="Items[0].ProgductId" class="control-label">Product id</label>
+        <input type="number" asp-for="Items[0].ProductId" class="form-control">
+        <span asp-validation-for="Items[0].ProductId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Items[0].Quantity" class="control-label">Quantity</label>
+        <input type="number" asp-for="Items[0].Quantity" class="form-control">
+        <span asp-validation-for="Items[0].Quantity" class="text-danger"></span>
+    </div>
     
     <button class="btn btn-primary" type="submit">Create order</button>
 </form>
