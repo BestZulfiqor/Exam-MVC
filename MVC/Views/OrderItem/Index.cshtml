@@ -1,0 +1,49 @@
+﻿@model List<Domain.Dtos.OrderItems.GetOrderItemDto>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order - MvcApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">OrderItems</h1>
+        
+    <div class="mb-3">
+        <a class="btn btn-primary" asp-action="Create">Create orderItem</a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Order id</th>
+            <th>Product Id</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var orderItemDto in Model)
+        {
+            <tr>
+                <td>@orderItemDto.Id</td>
+                <td>@orderItemDto.OrderId</td>
+                <td>@orderItemDto.ProductId</td>
+                <td>@orderItemDto.Quantity</td>
+                <td>
+                    <a class="btn btn-sm btn-primary " asp-action="Edit" asp-route-id="@orderItemDto.Id">Edit</a>
+                    <a class="btn btn-sm btn-danger ml-1" asp-action="Delete" asp-route-id="@orderItemDto.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model Domain.Dtos.Orders.GetOrderDto
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container mt-5 card p-5" style="margin: auto; max-width: 800px;">
+    <h1>Delete Order</h1>
+    <p>Are you sure you want to delete this order?</p>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label for="OrderId" class="form-label">Order id:</label>
+            <input type="text" id="OrderId" class="form-control" asp-for="Id" readonly />
+        </div>
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@model Domain.Dtos.Orders.CreateOrderDto
+<h2 class="mb-4 fw-bold text-center">Create Order</h2>
+
+<form method="post" class="card p-5" style="display: flex; flex-direction: column; gap: 10px; max-width: 800px; margin: auto">
+    <div class="form-group">
+        <label asp-for="CustomerId" class="control-label">Choose customer</label>
+        <select asp-for="CustomerId" class="form-control" 
+                asp-items="@ViewBag.Customers">
+            <option value="">-- Select Customers --</option>
+        </select>
+        <span asp-validation-for="CustomerId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="OrderDate" class="control-label">Order date</label>
+        <input type="datetime-local" asp-for="OrderDate" class="form-control">
+        <span asp-validation-for="OrderDate" class="text-danger"></span>
+    </div>
+    
+    <button class="btn btn-primary" type="submit">Create order</button>
+</form>

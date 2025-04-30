@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Infrastructure",
+    "\\Infrastructure\\AutoMapper",
+    "\\MVC",
+    "\\MVC\\Views",
+    "\\MVC\\Views\\Product"
+  ],
+  "SelectedNode": "\\MVC\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}
